@@ -1,0 +1,24 @@
+{
+  "name": "none",
+  "version": "1.0.0",
+  "description": "none",
+  "main": "none",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "no"
+  },
+  "repository": {
+    "type": "git",
+    "url": "exam"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "brownbus",
+  "license": "ISC",
+  "dependencies": {
+    "tape": "^4.10.2"
+  }
+}
