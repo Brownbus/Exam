@@ -1,0 +1,27 @@
+<div *ngIf="loggedInUser" class="userInfo">
+  <h2>{{ loggedInUser?.firstName }}</h2>
+  <h2>{{ loggedInUser?.lastName }}</h2>
+  <h2>{{ loggedInUser?.age }}</h2>
+  <h1>{{ loggedInUser?.username }}</h1>
+  <button (click)="sendExampleRequest()">
+    Click here for some Query string and queryParam action
+  </button>
+  <h3 *ngIf="responseToQueryParam">responseToQueryParam: {{responseToQueryParam}}</h3>
+  <h3 *ngIf="responseToQueryString">responseToQueryString: {{responseToQueryString}}</h3>
+</div>
+
+<form *ngIf="!loggedInUser" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" formControlName="username" />
+  </div>
+
+  <div class="form-group">
+    <label>password</label>
+    <input type="password" formControlName="password" />
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary">Login</button>
+  </div>
+</form>
