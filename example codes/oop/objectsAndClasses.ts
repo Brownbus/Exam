@@ -61,3 +61,9 @@ console.log(Animal.getClassification())
 console.log(myMonkey)
 console.log(myMonkey.getKind())
 
+
+///polymorphism:
+
+
+console.log(myMonkey instanceof Animal)  //true
+console.log(myMonkey instanceof Monkey)  //true
