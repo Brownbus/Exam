@@ -25,3 +25,12 @@
     <button class="btn btn-primary">Login</button>
   </div>
 </form>
+
+<div *ngIf="!loggedInUser" class="requests">
+  <button class="post">SUBMIT USER TO DATABASE</button>
+  <button class="get">GET USER</button>
+  <button class="put">UPDATE USER</button>
+  <button class="delete">DELETE USER</button>
+</div>
+
+
