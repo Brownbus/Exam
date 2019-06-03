@@ -26,11 +26,26 @@
   </div>
 </form>
 
-<div *ngIf="!loggedInUser" class="requests">
-  <button class="post">SUBMIT USER TO DATABASE</button>
-  <button class="get">GET USER</button>
-  <button class="put">UPDATE USER</button>
-  <button class="delete">DELETE USER</button>
+<div *ngIf="loggedInUser" class="requests">
+
+  <table>
+    <th>username</th>
+    <th>first name</th>
+    <th>last name</th>
+    <th>age</th>
+    <tr>displayed.username</tr>
+    <tr>displayed.firstName</tr>
+    <tr>displayed.lastName</tr>
+    <tr>displayed.age</tr>
+  </table>
+
+
+
+
+  <button class="post" (click)="sendRequest('post')" >SUBMIT USER TO DATABASE</button>
+  <button class="get" (click)="sendRequest('get')">GET USER</button>
+  <button class="put" (click)="sendRequest('put')">UPDATE USER</button>
+  <button class="delete" (click)="sendRequest('delete')">DELETE USER</button>
 </div>
 
 

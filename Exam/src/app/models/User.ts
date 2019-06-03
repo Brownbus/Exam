@@ -4,5 +4,5 @@ export interface User{
   lastName: string;
   age: number;
   username: string;
-  authToken: string;
+  authToken?: string;
 }
