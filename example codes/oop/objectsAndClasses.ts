@@ -6,6 +6,13 @@ interface Dog{
   owner: string
 }
 
+abstract class Creature {
+  public name: string;
+  public age: number;
+  constructor(name: string, age: number, kind: string ){}
+  getKind(): void{}
+}
+
 class Animal {
   private static tacomonicalClassification: string = 'animals'
   private kind: string;
@@ -41,7 +48,8 @@ class Monkey extends Animal {
   }
 }
 
-let myAnimal: Animal = new Animal('Horsey', 21, 'Zebra')
+let myAnimal: Creature;
+myAnimal = new Animal('Horsey', 21, 'Zebra')
 let myDog: Dog = Animal.createDog()
 let myMonkey: Monkey = new Monkey('Luffy', 18)
 
