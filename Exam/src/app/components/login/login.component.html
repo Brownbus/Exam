@@ -6,8 +6,12 @@
   <button (click)="sendExampleRequest()">
     Click here for some Query string and queryParam action
   </button>
-  <h3 *ngIf="responseToQueryParam">responseToQueryParam: {{responseToQueryParam}}</h3>
-  <h3 *ngIf="responseToQueryString">responseToQueryString: {{responseToQueryString}}</h3>
+  <h3 *ngIf="responseToQueryParam">
+    responseToQueryParam: {{ responseToQueryParam }}
+  </h3>
+  <h3 *ngIf="responseToQueryString">
+    responseToQueryString: {{ responseToQueryString }}
+  </h3>
 </div>
 
 <form *ngIf="!loggedInUser" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -27,25 +31,37 @@
 </form>
 
 <div *ngIf="loggedInUser" class="requests">
-
-  <table>
+  <table style="border:solid 1px black">
     <th>username</th>
+    <tr>
+      {{
+        displayed.username
+      }}
+    </tr>
     <th>first name</th>
+    <tr>
+      {{
+        displayed.firstName
+      }}
+    </tr>
     <th>last name</th>
+    <tr>
+      {{
+        displayed.lastName
+      }}
+    </tr>
     <th>age</th>
-    <tr>displayed.username</tr>
-    <tr>displayed.firstName</tr>
-    <tr>displayed.lastName</tr>
-    <tr>displayed.age</tr>
+    <tr>
+      {{
+        displayed.age
+      }}
+    </tr>
   </table>
 
-
-
-
-  <button class="post" (click)="sendRequest('post')" >SUBMIT USER TO DATABASE</button>
+  <button class="post" (click)="sendRequest('post')">
+    SUBMIT USER TO DATABASE
+  </button>
   <button class="get" (click)="sendRequest('get')">GET USER</button>
   <button class="put" (click)="sendRequest('put')">UPDATE USER</button>
   <button class="delete" (click)="sendRequest('delete')">DELETE USER</button>
 </div>
-
-

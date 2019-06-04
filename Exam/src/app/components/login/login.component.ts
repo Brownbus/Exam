@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   };
   displayed: any = this.dummyData;
   dummyDataUpdated: User = {
-    username: 'updatedUsername',
+    username: 'dummyUsername',
     firstName: 'Legiterfirstname',
     lastName: 'legiterLastname',
     age: 52
@@ -82,7 +82,7 @@ export class LoginComponent implements OnInit {
           ...this.dummyData,
           password: 'password'
         }).subscribe(response => {
-          this.displayed = response;
+          this.displayed = response[0];
           alert('succesful submission');
         });
         break;
@@ -91,6 +91,7 @@ export class LoginComponent implements OnInit {
           ...this.dummyDataUpdated,
           password: 'password'
         }).subscribe(updatedUser => {
+          console.log(updatedUser)
           this.displayed = updatedUser;
           console.log('succesful update');
           this.crud = updatedUser.username;
